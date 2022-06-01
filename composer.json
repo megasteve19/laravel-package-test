@@ -48,6 +48,9 @@
     },
     "extra": {
         "laravel": {
+            "providers": [
+                "LaravelPackageTest\\Providers\\LaravelPackageTestServiceProvider"
+            ],
             "dont-discover": []
         }
     },
