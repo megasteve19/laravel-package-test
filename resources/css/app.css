@@ -1,0 +1,26 @@
+body
+{
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+button.btn
+{
+    border-radius: 0;
+    border: none;
+    background-color: #3b5998;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+button.btn.btn-primary
+{
+    background-color: #3b5998;
+    color: #fff;
+}

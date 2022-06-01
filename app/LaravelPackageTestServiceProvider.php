@@ -4,6 +4,8 @@ namespace LaravelPackageTest;
 
 use Illuminate\Support\ServiceProvider;
 
+use LaravelPackageTest\Console\Commands\SayHello;
+
 class LaravelPackageTestServiceProvider extends ServiceProvider
 {
     /**
@@ -27,5 +29,22 @@ class LaravelPackageTestServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravelpackagetest');
+
+        if($this->app->runningInConsole())
+        {
+            $this->commands([
+                SayHello::class,
+            ]);
+        }
+
+        $this->publishes([
+            __DIR__.'/../config/laravelpackagetest.php' => config_path('laravelpackagetest.php'),
+        ], 'config');
+
+        $this->publishes([
+            __DIR__.'/../public' => public_path('vendor/laravelpackagetest'),
+        ], 'public');
+
+        config(['laravelpackagetest.mix.manifest.directory' => 'vendor/laravelpackagetest/']);
     }
 }
