@@ -8,6 +8,6 @@ class SayHello extends Controller
 {
     public function index(string $name)
     {
-        return view('say-hello', ['name' => $name]);
+        return view('laravelpackagetest::say-hello', ['name' => $name]);
     }
 }
