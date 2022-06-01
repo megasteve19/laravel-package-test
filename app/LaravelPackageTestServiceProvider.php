@@ -1,6 +1,6 @@
 <?php
 
-namespace LaravelPackageTest\Providers;
+namespace LaravelPackageTest;
 
 use Illuminate\Support\ServiceProvider;
 
